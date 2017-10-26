@@ -1,0 +1,31 @@
+DROP TABLE IF EXISTS Artist;
+DROP TABLE IF EXISTS Album;
+DROP TABLE IF EXISTS Track;
+DROP TABLE IF EXISTS Genre;
+CREATE TABLE Artist (
+    id  INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT UNIQUE,
+    name CHAR(30) UNIQUE,
+    origincountry CHAR(30),
+    genre_id INTEGER,
+    active_from INTEGER,
+    active_to INTEGER
+);
+CREATE TABLE Genre (
+    id  INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT UNIQUE,
+    name CHAR(30) UNIQUE 
+);
+CREATE TABLE Album (
+    id  INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT UNIQUE,
+    artist_id  INTEGER,
+    title   CHAR(100) UNIQUE,
+    releaseyear INTEGER,
+    genre_id INTEGER
+);
+CREATE TABLE Track (
+    id  INTEGER NOT NULL PRIMARY KEY 
+        AUTO_INCREMENT UNIQUE,
+    title CHAR(100) UNIQUE,
+    album_id  INTEGER,
+    genre_id  INTEGER,
+    len INTEGER, rating INTEGER, count INTEGER
+);
