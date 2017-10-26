@@ -1,0 +1,94 @@
+SELECT AVG(len) from Track JOIN Genre on genre_id = genre_id 
+
+
+SELECT * from Genre 
+SELECT * from Artist where origincountry = 'UK'
+SELECT name from Artist where active_from >= 1973 
+SELECT * from Album where releaseyear > 1973
+SELECT * FROM Album INNER JOIN Artist on Album.artist_id = Album.id where origincountry = 'UK';
+SELECT * from Track where title like 'a%' 
+
+SELECT AVG(len) from Track order by genre_id
+
+SELECT COUNT(title) as TracksCount from Track GROUP BY album_id;
+
+
+INSERT  INTO Genre (name) VALUES ('Classical');
+INSERT  INTO Genre (name) VALUES ('Jazz');
+INSERT  INTO Genre (name) VALUES ('Rock');
+INSERT  INTO Genre (name) VALUES ('Blues');
+INSERT  INTO Genre (name) VALUES ('Pop');
+
+INSERT INTO Artist (name, genre_id, origincountry, active_from, active_to) VALUES ('Prince', 3, 'US', 1976, 2016);
+INSERT INTO Artist (name, genre_id, origincountry, active_from, active_to) VALUES ('Idan Raichel', 5, 'Israel', 2000, 2017);
+INSERT INTO Artist (name, genre_id, origincountry, active_from, active_to) VALUES ('The Rolling Stones', 3, 'UK', 1962, 2017);
+INSERT INTO Artist (name, genre_id, origincountry, active_from, active_to) VALUES ('Depeche Mode', 3, 'UK', 1980, 2017);
+INSERT INTO Artist (name, genre_id, origincountry, active_from, active_to) VALUES ('Miles Davis', 2, 'US', 1944, 1991);
+
+INSERT INTO Album (title, artist_id, releaseyear, genre_id) VALUES ('The Very Best Of Prince', 1, 1979, 3);
+INSERT INTO Album (title, artist_id, releaseyear, genre_id) VALUES ('At the Edge of the Beginning', 2, 2016, 5);
+INSERT INTO Album (title, artist_id, releaseyear, genre_id) VALUES ('Let It Bleed', 3, 1969, 3);
+INSERT INTO Album (title, artist_id, releaseyear, genre_id) VALUES ('People Are People', 4, 1984, 3);
+INSERT INTO Album (title, artist_id, releaseyear, genre_id) VALUES ('The Legendary Prestige Quintet Sessions', 5, 1956, 2);
+
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('I Wanna Be Your Lover', 1, 3, 177737, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('1999', 1, 3, 217547, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Little Red Corvette', 1, 3, 296202, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('When Doves Cry', 1, 3, 228075, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Let''s Go Crazy', 1, 3, 280502, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Purple Rain', 1, 3, 520698, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('I Would Die 4 U', 1, 3, 176770, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Raspberry Beret', 1, 3, 212636, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Kiss', 1, 3, 226403, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Sign O'' The Times', 1, 3, 223007, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('U Got The Look', 1, 3, 227448, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Alphabet St.', 1, 3, 339121, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Thieves In The Temple', 1, 3, 200986, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Gett Off', 1, 3, 271490, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Cream', 1, 3, 253231, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Diamonds And Pearls', 1, 3, 260075, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Money Dont Matter 2 Night', 1, 3, 287399, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Le''Chakot (To Wait)', 2, 5, 186435, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Ha''Yad Ha''Chama (The Warm Hand)', 2, 5, 168646, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Ba''Yeshimon (In the Wilderness)', 2, 5, 146494, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Mabitim Ba''Yare''ach (Looking at the Moon)', 2, 5, 171624, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Ma''agalim (Circles)', 2, 5, 196911, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Ei Boded (Lonely Island)', 2, 5, 135627, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Yalda Shelli Ktana (Little Girl of Mine)', 2, 5, 134974, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Delet Mistovevet (Revolving Door)', 2, 5, 164858, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Ga''agua (Longing)', 2, 5, 165041, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Be''Chamesh Shniyot (In Five Seconds)', 2, 5, 194586, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Lifney She''Yigamer (Before It Ends)', 2, 5, 245315, NULL, NULL);
+
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Gimme Shelter', 3, 3, 485067, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Love In Vain', 3, 3, 259160, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Country Honk', 3, 3, 187533, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Live With Me', 3, 3, 213211, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Let It Bleed', 3, 3, 393560, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Midnight Rambler', 3, 3, 929541, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('You Got the Silver', 3, 3, 485067, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Monkey Man', 3, 3, 251506, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('You Can''t Always Get What You Want', 3, 3, 537626, NULL, NULL);
+
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('People are People', 4, 3, 251506, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Now This Is Fun', 4, 3, 206341, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Love in Itself', 4, 3, 251506, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Work Hard', 4, 3, 265116, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Told You So', 4, 3, 266893, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Get The Balance Right', 4, 3, 196440, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Leave In Silence', 4, 3, 243226, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Pipeline', 4, 3, 373054, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Everything Counts', 4, 3, 439144, NULL, NULL);
+
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('''Round Midnight', 5, 2, 325381, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Half Nelson', 5, 2, 289515, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('You''re My Everything', 5, 2, 321880, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('I Could Write A Book', 5, 2, 439144, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Oleo', 5, 2, 391444, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Airegin', 5, 2, 267546, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('When Lights Are Low', 5, 2, 455575, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('Blues By Five', 5, 2, 626181, NULL, NULL);
+INSERT INTO Track (title, album_id, genre_id, len, rating, count) VALUES ('My Funny Valentine', 5, 2, 361404, NULL, NULL);
+
+
+
